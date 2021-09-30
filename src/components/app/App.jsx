@@ -40,8 +40,8 @@ const [state, dispatch] = useReducer(colorHistory, initialValue);
     <>
       <button aria-label="undo-button" onClick={() => dispatch({ type: 'undo' })}>undo</button>
       <button aria-label="redo-button" onClick={() => dispatch({ type: 'redo' })}>redo</button>
-      <input type="color" value={state.current} onChange={({ target }) => dispatch({ type: 'record', payload: target.value })} />
-      <div aria-label="display" style={{ backgroundColor: state.current, width: '10rem', height: '10rem' }}></div>
+      <input role="box" type="color" value={state.current} onChange={({ target }) => dispatch({ type: 'record', payload: target.value })} />
+      <div role="display" aria-label="color-block" style={{ backgroundColor: state.current, width: '10rem', height: '10rem' }}></div>
     </>
   )
 }
